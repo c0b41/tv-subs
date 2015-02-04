@@ -1,0 +1,29 @@
+{
+  "name": "tv-subs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/test.js --reporter spec --timeout 15000"
+  },
+  "author": "Ayhan Kuru",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "~1.7.0",
+    "bluebird": "~2.9.6",
+    "request-promise": "~0.3.3",
+    "cheerio": "~0.18.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "~2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ayhankuru/tv-subs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayhankuru/tv-subs/issues"
+  },
+  "homepage": "https://github.com/ayhankuru/tv-subs"
+}
