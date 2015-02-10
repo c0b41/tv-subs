@@ -1,17 +1,17 @@
 {
   "name": "tv-subs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/test.js --reporter spec --timeout 15000"
+    "test": "iojs node_modules/mocha/bin/mocha test/test.js --reporter spec --timeout 15000"
   },
   "author": "Ayhan Kuru",
   "license": "MIT",
   "dependencies": {
     "underscore": "~1.7.0",
     "bluebird": "~2.9.6",
-    "request-promise": "~0.3.3",
+    "request-promise": "~0.4.0",
     "cheerio": "~0.18.0"
   },
   "devDependencies": {
