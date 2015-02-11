@@ -128,7 +128,7 @@ console.log(err);
 
 
 ```js
-tvsubs.episode({path:"/tv/new-girl/season-4/"}).then(function(data){
+tvsubs.episode({path:"/tv/new-girl/season-4/episode-13/"}).then(function(data){
     console.log(data);
 }).catch(function(err){
 

@@ -52,7 +52,7 @@ describe('Season Test!!!...', function () {
 		tvsubs.season({path:"/tv/new-girl/season-4/"}).then(function(data){
 				
 				expect(data).to.be.an('object');
-				expect(data.list.length).to.eql(1);
+				expect(data.list.length).to.eql(2);
 				expect(data.list[0].title).to.eql('Episode 13');
 				expect(data.list[0].path).to.eql('/tv/new-girl/season-4/episode-13/');
 				done();
@@ -70,7 +70,7 @@ describe('Episode Test!!!...', function () {
 
 	it('Test :1', function (done) {
 		
-		tvsubs.episode({path:"/tv/new-girl/season-4/"}).then(function(data){
+		tvsubs.episode({path:"/tv/new-girl/season-4/episode-13/"}).then(function(data){
 				
 				expect(data).to.be.an('object');
 				expect(data.list.length).to.eql(4);
