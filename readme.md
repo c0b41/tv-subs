@@ -1,7 +1,4 @@
-[![Build Status](http://img.shields.io/travis/ayhankuru/tv-subs.svg?style=flat-square)](https://travis-ci.org/ayhankuru/tv-subs)
-
-
-[![Build Status](https://img.shields.io/david/ayhankuru/tv-subs.svg?style=flat-square)](https://david-dm.org/ayhankuru/tv-subs)
+[![Build Status](http://img.shields.io/travis/ayhankuru/tv-subs.svg?style=flat-square)](https://travis-ci.org/ayhankuru/tv-subs) [![Build Status](https://img.shields.io/david/ayhankuru/tv-subs.svg?style=flat-square)](https://david-dm.org/ayhankuru/tv-subs) [![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat-square)](https://iojs.org)
 
 
 
