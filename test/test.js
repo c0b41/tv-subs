@@ -52,9 +52,9 @@ describe('Season Test!!!...', function () {
 		tvsubs.season({path:"/tv/new-girl/season-4/"}).then(function(data){
 				
 				expect(data).to.be.an('object');
-				expect(data.list.length).to.eql(2);
-				expect(data.list[0].title).to.eql('Episode 13');
-				expect(data.list[0].path).to.eql('/tv/new-girl/season-4/episode-13/');
+				expect(data.list.length).to.eql(7);
+				expect(data.list[0].title).to.eql('Episode 1');
+				expect(data.list[0].path).to.eql('/tv/new-girl/season-4/episode-1/');
 				done();
 			},function (err) {
 					expect(err).to.exist;
