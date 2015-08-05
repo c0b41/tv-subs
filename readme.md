@@ -15,10 +15,7 @@ npm install tv-subs
 
 
 ```js
-var tvsubs = require('tv-subs')();
-//or
-var Subs = require('tv-subs');
-var tvsubs =Subs();
+var tvsubs = require('tv-subs');
 ```
 
 
@@ -27,11 +24,11 @@ var tvsubs =Subs();
 
 | Arguments     | Type          | Default       | Example       | 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| query         | string        | Lost          |  New Girl     |
+| Argument      | string        | Lost          |  New Girl     |
 
 
 ```js
-tvsubs.search({query:"New Girl"}).then(function(data){
+tvsubs.search("New Girl").then(function(data){
     console.log(data);
 }).catch(function(err){
 
@@ -55,11 +52,11 @@ console.log(err);
 
 | Arguments     | Type          | Default       | Example       | 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| path         | string        | lost          |  new-girl     |
+| Argument      | string        | lost          |  new-girl     |
 
 
 ```js
-tvsubs.detail({path:"new-girl"}).then(function(data){
+tvsubs.detail("new-girl").then(function(data){
     console.log(data);
 }).catch(function(err){
 
@@ -91,11 +88,11 @@ console.log(err);
 
 | Arguments     | Type          | Default       | Example       | 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| path         | string        | /tv/lost/season-1/         |  /tv/new-girl/season-4/     |
+| Argument         | string        | /lost/season-1 |  /new-girl/season-4  |
 
 
 ```js
-tvsubs.season({path:"/tv/new-girl/season-4/"}).then(function(data){
+tvsubs.season("/new-girl/season-4").then(function(data){
     console.log(data);
 }).catch(function(err){
 
@@ -108,9 +105,8 @@ console.log(err);
 **output**
 
 ```json
-{ "list": 
-   [ { "title": "Episode 13",
-       "path": "/tv/new-girl/season-4/episode-13/" } ] }
+[{ "title": "Episode 13",
+       "path": "/tv/new-girl/season-4/episode-13/" } ];
 
 
 ```
@@ -121,11 +117,11 @@ console.log(err);
 
 | Arguments     | Type          | Default       | Example       | 
 | ------------- |:-------------:|:-------------:|:-------------:|
-| path         | string        | /tv/lost/season-1/episode-1/         |  /tv/new-girl/season-4/episode-13/     |
+| Argument         | string        | /lost/season-1/episode-1         |  /tv/new-girl/season-4/episode-13     |
 
 
 ```js
-tvsubs.episode({path:"/tv/new-girl/season-4/episode-13/"}).then(function(data){
+tvsubs.episode("/new-girl/season-4/episode-13").then(function(data){
     console.log(data);
 }).catch(function(err){
 
@@ -138,36 +134,26 @@ console.log(err);
 **output**
 
 ```json
-{ "list": 
-   [ { "title": "New.Girl.S04E13.HDTV.x264-KILLERS",
+    [ { "title": "New.Girl.S04E13.HDTV.x264-KILLERS",
        "path": "/subtitles/new-girl-season-4-episode-13-arabic-624",
        "lang": "Arabic",
-       "uploader": "anonymous" },
-     { "title": "New.Girl.S04E13.HDTV.x264-KILLERS",
-       "path": "/subtitles/new-girl-season-4-episode-13-english-291",
-       "lang": "English",
-       "uploader": "anonymous" },
-     { "title": "New.Girl.S04E13.HDTV.x264-KILLERS",
-       "path": "/subtitles/new-girl-season-4-episode-13-italian-292",
-       "lang": "Italian",
-       "uploader": "anonymous" },
-     { "title": "New Girl S04E13 720p HDTV x264-KILLERS",
-       "path": "/subtitles/new-girl-season-4-episode-13-spanish-293",
-       "lang": "Spanish",
-       "uploader": "anonymous" } ] }
+       "download":"http://www.tv-subs.com/subtitle/new-girl-season-4-episode-13-arabic-624.zip",
+       "uploader": "anonymous" }];
 ```
 
-## Subtitle
+## download
 
 
 | Arguments     | Type          |  Example       | 
 | ------------- |:-------------:|:-------------:|
-| path         | string        |  /subtitles/new-girl-season-4-episode-13-english-291    |
+| Argument      | string        |  http://www.tv-subs.com/subtitle/new-girl-season-4-episode-13-arabic-624.zip    |
 
 
 ```js
-tvsubs.subtitle({path:"/subtitles/new-girl-season-4-episode-13-english-291"}).then(function(data){
-    console.log(data);
+tvsubs.download("http://www.tv-subs.com/subtitle/new-girl-season-4-episode-13-arabic-624.zip"}).then(function(file){
+    // donwload function return stream  
+    file.pipe(fs.createWriteStream('subtitle.zip'));
+
 }).catch(function(err){
 
 console.log(err);
@@ -175,10 +161,4 @@ console.log(err);
 });
 
 
-```
-
-**output**
-
-```json
-{ "path":  "https://www.tv-subs.com/subtitle/new-girl-season-4-episode-13-english-291.zip" }
-```
+``` 
